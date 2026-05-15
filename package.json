@@ -1,0 +1,15 @@
+{
+  "name": "craft-skills",
+  "version": "1.0.0",
+  "description": "Collection of essential agent skills for frontend UI craft, polish, and design engineering.",
+  "type": "module",
+  "bin": {
+    "craft-skills": "./cli/init.js"
+  },
+  "files": [
+    "skills",
+    "cli"
+  ],
+  "keywords": ["opencode", "skills", "ui", "craft", "design", "polish"],
+  "license": "MIT"
+}
