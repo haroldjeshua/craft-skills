@@ -12,42 +12,51 @@ frontend UI craft, polish, and design engineering.
 | **make-interfaces-feel-better** | Hover states, shadows, borders, micro-interactions, enter/exit animations, visual polish |
 | **shadcn** | Manage shadcn/ui components — add, search, fix, debug, style, compose |
 
-## Installation
-
-### Option A — degit (no npm, no git history)
+## Quick start
 
 ```bash
-# Install into .agents/ (project-local)
-npx degit haroldjeshua/craft-skills .agents
-
-# Install into a custom folder
-npx degit haroldjeshua/craft-skills ./my-custom-folder
-
-# Install only the skills subdirectory (if .agents already exists)
-npx degit haroldjeshua/craft-skills/skills .agents/skills
+pnpx degit haroldjeshua/craft-skills/skills .agents/skills
 ```
 
-### Option B — npm package (upgrade-friendly)
+Pulls only the 4 skill folders into `.agents/skills/` — nothing else. opencode picks them up automatically.
+
+## Installation
+
+### Option A — degit (skills only, recommended)
 
 ```bash
-# Install into .agents/ (default)
+pnpx degit haroldjeshua/craft-skills/skills .agents/skills
+```
+
+Only the `/skills` subdirectory is pulled — no CLI, no package.json, no README.
+
+### Option B — degit (full repo)
+
+```bash
+pnpx degit haroldjeshua/craft-skills .agents
+```
+
+Pulls everything (skills + CLI + docs). Useful if you want the `craft-skills init` CLI available.
+
+### Option C — npm package (upgrade-friendly)
+
+```bash
 npx craft-skills init
+```
 
-# Install into a custom folder
-npx craft-skills init ./my-custom-folder
-
-# Overwrite existing without prompting
+Published npm package. Supports `--force`, custom paths, and version pinning:
+```bash
+npx craft-skills init ./my-skills
 npx craft-skills init --force
 ```
 
-### Option C — global install (shared across all projects)
+### Option D — global install (shared across all projects)
 
 ```bash
-# Install skills globally
-npx degit haroldjeshua/craft-skills/skills ~/.agents/skills
+pnpx degit haroldjeshua/craft-skills/skills ~/.agents/skills
 ```
 
-Then reference the global path in your opencode config:
+Then reference globally in your opencode config:
 ```json
 {
   "skills": ["~/.agents/skills/*"]
